@@ -9,20 +9,26 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
+            background: black; /* Optional: Black background for better display */
         }
         img {
-            width: 100vw; /* Make image take full width of the viewport */
-            height: 100vh; /* Make image take full height of the viewport */
-            object-fit: contain; /* Ensure full image is shown without cropping */
             display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         .desktop-view {
+            width: 1606px;
+            height: 911px;
             display: block;
         }
         .mobile-view {
+            width: 736px;
+            height: 2580px;
             display: none;
         }
-        /* Auto-switching between desktop and mobile view */
+        /* Show mobile image on mobile devices */
         @media screen and (max-width: 768px) {
             .desktop-view {
                 display: none;
@@ -34,8 +40,9 @@
     </style>
 </head>
 <body>
-    <img src="em nischal desktop.png" alt="Desktop Screenshot" class="desktop-view">
-    <img src="em nischal mobile.png" alt="Mobile Screenshot" class="mobile-view">
+    <img src="desktop.png" alt="Desktop Screenshot" class="desktop-view">
+    <img src="mobile.png" alt="Mobile Screenshot" class="mobile-view">
 </body>
 </html>
+
 
