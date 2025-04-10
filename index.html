@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=540, initial-scale=1.0">
     <title>Auto Image Display</title>
     <style>
         * {
@@ -17,11 +17,14 @@
             justify-content: flex-start;
             height: 100vh;
             overflow-x: hidden;
+            max-width: 540px; /* Fix width to 540px */
+            margin: 0 auto; /* Centers content */
         }
         img {
             display: none;
-            width: 100%;
-            height: auto;
+            width: 100%;  /* Ensures the image fits within the screen */
+            height: auto; /* Keeps aspect ratio to avoid distortion */
+            object-fit: contain; /* Prevents cropping & ensures full image visibility */
         }
         .desktop-view {
             display: block;
@@ -37,21 +40,21 @@
         }
         .mobile-alt {
             display: none;
+            max-width: 540px; /* Ensures correct width */
         }
 
-        /* When viewed in a resized desktop browser (below 1024px) */
-        @media screen and (max-width: 1024px) and (min-width: 769px) {
+        /* Show "mobile-alt" when resizing desktop browser (540px wide) */
+        @media screen and (max-width: 1024px) and (min-width: 541px) {
             .desktop-view {
                 display: none;
             }
             .mobile-alt {
                 display: block;
-                max-width: 768px;
             }
         }
 
-        /* Show Mobile Image on Mobile Devices */
-        @media screen and (max-width: 768px) {
+        /* Show "mobile.png" on actual mobile devices */
+        @media screen and (max-width: 540px) {
             .desktop-view {
                 display: none;
             }
