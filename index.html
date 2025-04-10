@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,31 +14,28 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            overflow: hidden;
+            min-height: 100vh;
+            overflow: auto; /* Allows scrolling if needed */
         }
-        .desktop-view, .mobile-view {
-            display: none; /* Hide both by default */
-            position: absolute;
+        img {
+            display: none; /* Hide all images by default */
+            max-width: 100%; /* Ensures the image never overflows the screen width */
+            height: auto; /* Maintains the aspect ratio */
         }
         .desktop-view {
-            width: 1606px;
-            height: 911px;
+            display: block; /* Show desktop image by default */
         }
         .mobile-view {
-            width: 736px;
-            height: 2580px;
-        }
-
-        /* Show Desktop Image by Default */
-        @media screen and (min-width: 769px) {
-            .desktop-view {
-                display: block;
-            }
+            display: none; /* Hide mobile image initially */
+            max-height: 100vh; /* Make sure the image fits inside the mobile screen */
+            width: auto;
         }
 
         /* Show Mobile Image on Mobile Devices */
         @media screen and (max-width: 768px) {
+            .desktop-view {
+                display: none;
+            }
             .mobile-view {
                 display: block;
             }
@@ -46,7 +43,8 @@
     </style>
 </head>
 <body>
-    <img src="em nischal desktop.png" alt="Desktop Screenshot" class="desktop-view">
-    <img src="em nischal mobile.png" alt="Mobile Screenshot" class="mobile-view">
+    <img src="desktop.png" alt="Desktop Screenshot" class="desktop-view">
+    <img src="mobile.png" alt="Mobile Screenshot" class="mobile-view">
 </body>
 </html>
+
