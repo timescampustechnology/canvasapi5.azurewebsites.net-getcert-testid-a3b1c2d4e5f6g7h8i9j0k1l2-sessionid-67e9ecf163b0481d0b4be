@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content= "width=540, initial-scale=1.0">
     <title>Auto Image Display</title>
     <style>
         * {
@@ -17,6 +17,8 @@
             justify-content: flex-start;
             height: 100vh;
             overflow-x: hidden;
+            max-width: 540px; /* Fixes the browser width to 540px */
+            margin: 0 auto; /* Centers the content */
         }
         img {
             display: none;
@@ -39,19 +41,19 @@
             display: none;
         }
 
-        /* When viewed in a resized desktop browser (below 1024px) */
-        @media screen and (max-width: 1024px) and (min-width: 769px) {
+        /* When viewed in a resized desktop browser (540px wide) */
+        @media screen and (max-width: 1024px) and (min-width: 541px) {
             .desktop-view {
                 display: none;
             }
             .mobile-alt {
                 display: block;
-                max-width: 768px;
+                max-width: 540px;
             }
         }
 
         /* Show Mobile Image on Mobile Devices */
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 540px) {
             .desktop-view {
                 display: none;
             }
@@ -62,10 +64,10 @@
     </style>
 </head>
 <body>
-    <img src="em nischal desktop.png" alt="Desktop Screenshot" class="desktop-view">
-    <img src="em nischal mobile-alt.png" alt="Resized Browser Mobile View" class="mobile-alt">
+    <img src="desktop.png" alt="Desktop Screenshot" class="desktop-view">
+    <img src="mobile-alt.png" alt="Resized Browser Mobile View" class="mobile-alt">
     <div class="mobile-container">
-        <img src="em nischal mobile..png" alt="Mobile Screenshot" class="mobile-view">
+        <img src="mobile.png" alt="Mobile Screenshot" class="mobile-view">
     </div>
 </body>
 </html>
