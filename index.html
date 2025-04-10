@@ -8,30 +8,27 @@
         * {
             margin: 0;
             padding: 0;
-            background: black; /* Optional: Black background for better display */
+            background: black; /* Optional: Black background */
         }
         body {
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            overflow: auto; /* Allows scrolling if needed */
+            height: 100vh;
         }
         img {
-            display: none; /* Hide all images by default */
-            max-width: 100%; /* Ensures the image never overflows the screen width */
-            height: auto; /* Maintains the aspect ratio */
+            max-width: 100%;  /* Ensures the image fits within the screen width */
+            max-height: 100vh; /* Ensures the image does not exceed the screen height */
+            display: block;
         }
         .desktop-view {
-            display: block; /* Show desktop image by default */
+            display: block;
         }
         .mobile-view {
-            display: none; /* Hide mobile image initially */
-            max-height: 100vh; /* Make sure the image fits inside the mobile screen */
-            width: auto;
+            display: none;
         }
 
-        /* Show Mobile Image on Mobile Devices */
+        /* Show mobile image on mobile screens */
         @media screen and (max-width: 768px) {
             .desktop-view {
                 display: none;
@@ -43,8 +40,7 @@
     </style>
 </head>
 <body>
-    <img src="em nischal desktop.png" alt="Desktop Screenshot" class="desktop-view">
-    <img src="em nischal mobile.png" alt="Mobile Screenshot" class="mobile-view">
+    <img src="desktop.png" alt="Desktop Screenshot" class="desktop-view">
+    <img src="mobile.png" alt="Mobile Screenshot" class="mobile-view">
 </body>
 </html>
-
