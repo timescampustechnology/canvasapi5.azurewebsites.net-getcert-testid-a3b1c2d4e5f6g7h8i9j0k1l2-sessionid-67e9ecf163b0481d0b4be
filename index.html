@@ -42,12 +42,12 @@
             object-fit: contain;
         }
 
-        /* ✅ Fix: Ensure `mobile-alt.png` fits perfectly without zooming */
+        /* ✅ Fix: Ensure `mobile-alt.png` (Resized Browser View) fits properly */
         .mobile-alt {
             display: none;
-            width: 540px; /* Match exact width */
-            height: 1056px; /* Match exact height */
-            object-fit: contain; /* Keeps aspect ratio without cropping */
+            width: 100vw; /* Fills full screen width */
+            height: 100vh; /* Fills full screen height */
+            object-fit: contain; /* Ensures the whole image is visible without cropping */
         }
 
         /* Show "mobile-alt" when resizing desktop browser (540px wide) */
