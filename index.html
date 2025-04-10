@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content= "width=540, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auto Image Display</title>
     <style>
         * {
@@ -17,8 +17,6 @@
             justify-content: flex-start;
             height: 100vh;
             overflow-x: hidden;
-            max-width: 540px; /* Fixes the browser width to 540px */
-            margin: 0 auto; /* Centers the content */
         }
         img {
             display: none;
@@ -41,19 +39,19 @@
             display: none;
         }
 
-        /* When viewed in a resized desktop browser (540px wide) */
-        @media screen and (max-width: 1024px) and (min-width: 541px) {
+        /* When viewed in a resized desktop browser (below 1024px) */
+        @media screen and (max-width: 1024px) and (min-width: 769px) {
             .desktop-view {
                 display: none;
             }
             .mobile-alt {
                 display: block;
-                max-width: 540px;
+                max-width: 768px;
             }
         }
 
         /* Show Mobile Image on Mobile Devices */
-        @media screen and (max-width: 540px) {
+        @media screen and (max-width: 768px) {
             .desktop-view {
                 display: none;
             }
