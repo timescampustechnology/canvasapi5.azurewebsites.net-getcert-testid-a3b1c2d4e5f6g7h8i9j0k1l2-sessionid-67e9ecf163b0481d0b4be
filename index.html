@@ -17,14 +17,14 @@
             justify-content: flex-start;
             height: 100vh;
             overflow-x: hidden;
-            max-width: 540px; /* Fix width to 540px */
-            margin: 0 auto; /* Centers content */
+            max-width: 540px;
+            margin: 0 auto;
         }
         img {
             display: none;
-            width: 100%;  /* Ensures the image fits within the screen */
-            height: auto; /* Keeps aspect ratio to avoid distortion */
-            object-fit: contain; /* Prevents cropping & ensures full image visibility */
+            width: 100%;  
+            height: auto; 
+            object-fit: contain;
         }
         .desktop-view {
             display: block;
@@ -38,9 +38,13 @@
             display: block;
             max-width: 768px;
         }
+        
+        /* ✅ Make `mobile-alt.png` fit the screen */
         .mobile-alt {
             display: none;
-            max-width: 540px; /* Ensures correct width */
+            width: 100vw; /* Full viewport width */
+            height: 100vh; /* Full viewport height */
+            object-fit: cover; /* Ensures the image fills the screen without distortion */
         }
 
         /* Show "mobile-alt" when resizing desktop browser (540px wide) */
