@@ -34,17 +34,22 @@
             display: none;
             width: 100%;
         }
+
+        /* ✅ Fix: Make `mobile.png` fit the screen properly */
         .mobile-view {
             display: block;
-            max-width: 768px;
+            width: 100vw; /* Takes full viewport width */
+            height: auto; /* Keeps aspect ratio */
+            max-height: 100vh; /* Ensures it doesn’t go out of screen */
+            object-fit: contain; /* Prevents zooming in or out */
         }
         
-        /* ✅ Make `mobile-alt.png` fit the screen */
+        /* Mobile-Alt Image (Resized Browser View) */
         .mobile-alt {
             display: none;
-            width: 100vw; /* Full viewport width */
-            height: 100vh; /* Full viewport height */
-            object-fit: cover; /* Ensures the image fills the screen without distortion */
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
         }
 
         /* Show "mobile-alt" when resizing desktop browser (540px wide) */
