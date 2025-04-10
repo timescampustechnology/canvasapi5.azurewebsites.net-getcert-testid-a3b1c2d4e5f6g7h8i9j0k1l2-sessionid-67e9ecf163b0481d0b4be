@@ -8,31 +8,37 @@
         * {
             margin: 0;
             padding: 0;
-            overflow: hidden;
             background: black; /* Optional: Black background for better display */
         }
-        img {
-            display: block;
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .desktop-view, .mobile-view {
+            display: none; /* Hide both by default */
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
         }
         .desktop-view {
             width: 1606px;
             height: 911px;
-            display: block;
         }
         .mobile-view {
             width: 736px;
             height: 2580px;
-            display: none;
         }
-        /* Show mobile image on mobile devices */
-        @media screen and (max-width: 768px) {
+
+        /* Show Desktop Image by Default */
+        @media screen and (min-width: 769px) {
             .desktop-view {
-                display: none;
+                display: block;
             }
+        }
+
+        /* Show Mobile Image on Mobile Devices */
+        @media screen and (max-width: 768px) {
             .mobile-view {
                 display: block;
             }
@@ -44,5 +50,4 @@
     <img src="mobile.png" alt="Mobile Screenshot" class="mobile-view">
 </body>
 </html>
-
 
