@@ -8,27 +8,24 @@
         * {
             margin: 0;
             padding: 0;
-            background: white; /* White background */
+            background: white;
         }
         body {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centers horizontally */
-            justify-content: flex-start; /* Aligns to the top */
+            align-items: center;
+            justify-content: flex-start;
             height: 100vh;
             overflow-x: hidden;
         }
         img {
             display: none;
-            width: 100%; /* Default width */
-            max-width: 1606px; /* Ensures desktop image doesn't get too big */
+            width: 100%;
             height: auto;
         }
         .desktop-view {
             display: block;
-            width: 100%;
-            max-width: 1606px; /* Keeps desktop image from being too wide */
-            margin-top: 0; /* Aligns image to the top */
+            max-width: 1606px;
         }
         .mobile-container {
             display: none;
@@ -36,9 +33,21 @@
         }
         .mobile-view {
             display: block;
-            width: 100vw; /* Fills entire screen width */
-            max-width: 768px; /* Keeps width within mobile limits */
-            height: auto; /* Keeps aspect ratio */
+            max-width: 768px;
+        }
+        .mobile-alt {
+            display: none;
+        }
+
+        /* When viewed in a resized desktop browser (below 1024px) */
+        @media screen and (max-width: 1024px) and (min-width: 769px) {
+            .desktop-view {
+                display: none;
+            }
+            .mobile-alt {
+                display: block;
+                max-width: 768px;
+            }
         }
 
         /* Show Mobile Image on Mobile Devices */
@@ -48,15 +57,15 @@
             }
             .mobile-container {
                 display: block;
-                text-align: center;
             }
         }
     </style>
 </head>
 <body>
     <img src="em nischal desktop.png" alt="Desktop Screenshot" class="desktop-view">
+    <img src="em nischal mobile-alt.png" alt="Resized Browser Mobile View" class="mobile-alt">
     <div class="mobile-container">
-        <img src="em nischal mobile..png" alt="Mobile Screenshot" class="mobile-view">
+        <img src="em nischal mobile.png" alt="Mobile Screenshot" class="mobile-view">
     </div>
 </body>
 </html>
