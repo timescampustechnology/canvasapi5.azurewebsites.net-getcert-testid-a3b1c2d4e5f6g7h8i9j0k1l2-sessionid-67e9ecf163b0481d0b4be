@@ -39,12 +39,12 @@
             max-width: 768px;
         }
         
-        /* ✅ Slightly Reduce `mobile-alt.png` Width to Show Borders */
+        /* ✅ Perfect Fit Fix for `mobile-alt.png` */
         .mobile-alt {
             display: none;
-            width: 95vw; /* Reduced from 100vw to 95vw */
-            height: 100vh;
-            object-fit: contain; /* Ensures full visibility without cutting off */
+            width: 99vw;  /* Slightly reduced width to remove extra borders */
+            height: 99vh;  /* Slightly reduced height to avoid overflow */
+            object-fit: cover;  /* Ensures no distortion */
         }
 
         /* Show "mobile-alt" when resizing desktop browser (540px wide) */
@@ -70,7 +70,7 @@
 </head>
 <body>
     <img src="em nischal desktop.png" alt="Desktop Screenshot" class="desktop-view">
-    <img src="em nischalmobile-alt.png" alt="Resized Browser Mobile View" class="mobile-alt">
+    <img src="em nischal mobile-alt.png" alt="Resized Browser Mobile View" class="mobile-alt">
     <div class="mobile-container">
         <img src="em nischal mobile..png" alt="Mobile Screenshot" class="mobile-view">
     </div>
