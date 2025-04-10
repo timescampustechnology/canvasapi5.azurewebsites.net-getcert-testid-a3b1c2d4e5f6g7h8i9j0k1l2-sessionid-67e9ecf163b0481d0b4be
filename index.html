@@ -8,39 +8,55 @@
         * {
             margin: 0;
             padding: 0;
-            background: black; /* Optional: Black background */
+            background: white; /* White background */
         }
         body {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center; /* Centers horizontally */
+            justify-content: flex-start; /* Aligns to the top */
             height: 100vh;
+            overflow-x: hidden;
         }
         img {
-            max-width: 100%;  /* Ensures the image fits within the screen width */
-            max-height: 100vh; /* Ensures the image does not exceed the screen height */
-            display: block;
+            display: none;
+            width: 100%; /* Default width */
+            max-width: 1606px; /* Ensures desktop image doesn't get too big */
+            height: auto;
         }
         .desktop-view {
             display: block;
+            width: 100%;
+            max-width: 1606px; /* Keeps desktop image from being too wide */
+            margin-top: 0; /* Aligns image to the top */
+        }
+        .mobile-container {
+            display: none;
+            width: 100%;
         }
         .mobile-view {
-            display: none;
+            display: block;
+            width: 100vw; /* Fills entire screen width */
+            max-width: 768px; /* Keeps width within mobile limits */
+            height: auto; /* Keeps aspect ratio */
         }
 
-        /* Show mobile image on mobile screens */
+        /* Show Mobile Image on Mobile Devices */
         @media screen and (max-width: 768px) {
             .desktop-view {
                 display: none;
             }
-            .mobile-view {
+            .mobile-container {
                 display: block;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
-    <img src="em nischal desktop.png" alt="em nischal Desktop Screenshot" class="desktop-view">
-    <img src="em nischal mobile..png" alt="em nischal mobile Screenshot" class="mobile-view">
+    <img src="em nischal desktop.png" alt="Desktop Screenshot" class="desktop-view">
+    <div class="mobile-container">
+        <img src="em nischal mobile..png" alt="Mobile Screenshot" class="mobile-view">
+    </div>
 </body>
 </html>
