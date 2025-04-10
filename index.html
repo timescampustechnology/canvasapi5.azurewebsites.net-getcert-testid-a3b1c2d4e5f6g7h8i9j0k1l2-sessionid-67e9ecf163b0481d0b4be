@@ -39,12 +39,12 @@
             max-width: 768px;
         }
         
-        /* ✅ Make `mobile-alt.png` slightly zoomed out */
+        /* ✅ Slightly Reduce `mobile-alt.png` Width to Show Borders */
         .mobile-alt {
             display: none;
-            width: 95vw;  /* 95% of viewport width (slightly smaller) */
-            height: 95vh;  /* 95% of viewport height (slightly smaller) */
-            object-fit: contain; /* Keeps aspect ratio, slight zoom-out */
+            width: 95vw; /* Reduced from 100vw to 95vw */
+            height: 100vh;
+            object-fit: contain; /* Ensures full visibility without cutting off */
         }
 
         /* Show "mobile-alt" when resizing desktop browser (540px wide) */
@@ -70,7 +70,7 @@
 </head>
 <body>
     <img src="em nischal desktop.png" alt="Desktop Screenshot" class="desktop-view">
-    <img src="em nischal mobile-alt.png" alt="Resized Browser Mobile View" class="mobile-alt">
+    <img src="em nischalmobile-alt.png" alt="Resized Browser Mobile View" class="mobile-alt">
     <div class="mobile-container">
         <img src="em nischal mobile..png" alt="Mobile Screenshot" class="mobile-view">
     </div>
