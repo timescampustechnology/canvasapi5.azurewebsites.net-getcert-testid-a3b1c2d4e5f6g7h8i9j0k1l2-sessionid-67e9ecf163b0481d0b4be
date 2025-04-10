@@ -34,20 +34,22 @@
             display: none;
             width: 100%;
         }
+
+        /* ✅ Fix: Make `mobile.png` fit the screen properly */
         .mobile-view {
             display: block;
-            width: 100vw;
-            height: auto;
-            max-height: 100vh;
-            object-fit: contain;
+            width: 100vw; /* Takes full viewport width */
+            height: auto; /* Keeps aspect ratio */
+            max-height: 100vh; /* Ensures it doesn’t go out of screen */
+            object-fit: contain; /* Prevents zooming in or out */
         }
-
-        /* ✅ Fix: Ensure `mobile-alt.png` (Resized Browser View) fits properly */
+        
+        /* Mobile-Alt Image (Resized Browser View) */
         .mobile-alt {
             display: none;
-            width: 100vw; /* Fills full screen width */
-            height: 100vh; /* Fills full screen height */
-            object-fit: contain; /* Ensures the whole image is visible without cropping */
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
         }
 
         /* Show "mobile-alt" when resizing desktop browser (540px wide) */
@@ -75,7 +77,7 @@
     <img src="em nischal desktop.png" alt="Desktop Screenshot" class="desktop-view">
     <img src="em nischal mobile-alt.png" alt="Resized Browser Mobile View" class="mobile-alt">
     <div class="mobile-container">
-        <img src="em nischal mobile..png" alt="Mobile Screenshot" class="mobile-view">
+        <img src="em nischal mobile.png" alt="Mobile Screenshot" class="mobile-view">
     </div>
 </body>
 </html>
