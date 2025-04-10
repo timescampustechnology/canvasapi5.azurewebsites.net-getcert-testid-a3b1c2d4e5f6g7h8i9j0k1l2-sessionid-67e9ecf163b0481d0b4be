@@ -3,78 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certificate Screenshots</title>
+    <title>Auto Image Display</title>
     <style>
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
+        * {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
         }
         img {
-            max-width: 100%;
-            height: auto;
-            border: 2px solid #333;
-            margin-bottom: 20px;
+            width: 100vw; /* Make image take full width of the viewport */
+            height: 100vh; /* Make image take full height of the viewport */
+            object-fit: contain; /* Ensure full image is shown without cropping */
+            display: block;
         }
-        .container {
-            max-width: 90%;
-            margin: auto;
+        .desktop-view {
+            display: block;
         }
-        h2 {
-            color: #444;
+        .mobile-view {
+            display: none;
+        }
+        /* Auto-switching between desktop and mobile view */
+        @media screen and (max-width: 768px) {
+            .desktop-view {
+                display: none;
+            }
+            .mobile-view {
+                display: block;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Desktop View</h2>
-        <a href="desktop.png" target="_blank">
-            <img src="desktop.png" alt="Desktop Screenshot">
-        </a>
-
-        <h2>Mobile View</h2>
-        <a href="<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certificate Screenshots</title>
-    <style>
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border: 2px solid #333;
-            margin-bottom: 20px;
-        }
-        .container {
-            max-width: 90%;
-            margin: auto;
-        }
-        h2 {
-            color: #444;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h2>Desktop View</h2>
-        <a href="em nischal desktop.png" target="_blank">
-            <img src="em nischal desktop.png" alt="Desktop Screenshot">
-        </a>
-
-        <h2>Mobile View</h2>
-        <a href="em nischal mobile.png" target="_blank">
-            <img src="em nischal mobile.png" alt="Mobile Screenshot">
-        </a>
-    </div>
+    <img src="em nischal desktop.png" alt="Desktop Screenshot" class="desktop-view">
+    <img src="em nischal mobile.png" alt="Mobile Screenshot" class="mobile-view">
 </body>
 </html>
-" target="_blank">
-            <img src="mobile.png" alt="Mobile Screenshot">
-        </a>
-    </div>
-</body>
-</html>
+
